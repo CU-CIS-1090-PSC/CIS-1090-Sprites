@@ -58,8 +58,8 @@ body {
   position: relative;
   left: 100px;
   background: gray;
-  height: 350px;
-  width: 220px;
+  height: 400px;
+  width: 300px;
   transform:
     rotateX(40deg) rotateZ(-35deg);
   transform-style: preserve-3d;
@@ -69,7 +69,7 @@ body {
 }
 
 #table {
-  width: 800px;
+  width: 900px;
   margin: auto;
   position: relative;
 }
@@ -96,12 +96,14 @@ body {
   right: 0px;
   display: inline-block;
   margin: 30px;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 #shelf > .game {
   cursor: pointer;
   background: gray;
-  width: 220px;
+  width: 280px;
   height: 50px;
   border-radius: 15px;
   margin: 2px;

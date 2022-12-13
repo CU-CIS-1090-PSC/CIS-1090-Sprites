@@ -1,11 +1,37 @@
-import homework from "./games/homework.js";
-import hunter from "./games/hunter.js";
-import badger from "./games/badger.js";
+import alekmcelhaney from "./games/alekmcelhaney.js"
+import axs108 from "./games/axs108.js"
+import badger from "./games/badger.js"
+import BensCodingHub from "./games/BensCodingHub.js"
+import CaptainA15 from "./games/CaptainA15.js"
+import Chinny911 from "./games/Chinny911.js"
+import DrewBarring from "./games/DrewBarring.js"
+import hunter from "./games/hunter.js"
+import Ishasal from "./games/Ishasal.js"
+import Jprctr13 from "./games/Jprctr13.js"
+import juanalbap from "./games/juanalbap.js"
+import MainaliAshlesha from "./games/MainaliAshlesha.js"
+import mlduprey from "./games/mlduprey.js"
+import royal from "./games/royal.js"
+import rxt06130 from "./games/rxt06130.js"
+import seezzo from "./games/seezzo.js"
 
 let games = [
-    homework,
-    hunter,
+    mlduprey,
+    alekmcelhaney,
+    axs108,
     badger,
+    BensCodingHub,
+    CaptainA15,
+    Chinny911,
+    DrewBarring,
+    hunter,
+    Ishasal,
+    Jprctr13,
+    juanalbap,
+    MainaliAshlesha,
+    royal,
+    rxt06130,
+    seezzo
 ];
 
 let shelf = document.querySelector("#shelf");

@@ -23,19 +23,21 @@ function setup(sprites) {
     //But you can use emojis!
     // https://emojis.wiki/
 
-    sprites[0].image = "🚒"; //A fire engine
+    sprites[0].image = "🐒"; //A monkey
     sprites[0].x = 100;
     sprites[0].y = 100;
-
-    //Putting two sprites together you
-    //can make more complicated things.
-    sprites[1].image = "🏠"; //A fire engine
+    sprites[1].image = "🍌"; //A banana
     sprites[1].x = 300;
     sprites[1].y = 100;
-    sprites[2].image = "🔥"; //A fire engine
-    sprites[2].x = 300;
-    sprites[2].y = 120;
-
+    sprites[2].image = "🍌"; 
+    sprites[2].x = 250;
+    sprites[2].y = 200;
+    sprites[3].image = "🍋"; //A lemon
+    sprites[3].x = 400;
+    sprites[3].y = 100;
+    sprites[4].image = "🍋";
+    sprites[4].x = 700;
+    sprites[4].y = 200;
 }
 
 /**
@@ -53,53 +55,76 @@ function setup(sprites) {
 function frame(sprites, t, dt, up, down, left, right, space) {
     //Keep references to the sprites in some variables with
     //better names:
-    const truck = sprites[0]; //Easier to remember
-    const house = sprites[1]; //Easier to remember
-    const fire = sprites[2]; //Easier to remember
+    const monkey = sprites[0]; 
+    const banana = sprites[1]; 
+    const banana2 = sprites[2]; 
+    const lemon = sprites[3];
+    const secondlemon = sprites[4]
 
-    //Move the fire engine
+
+    //Move the monkey
     if (up) {
         //Speed is in pixels per second, and
         //dt is the number of seconds that have
         //passed since the last frame.
         //
         //Multiply them together so that the
-        //truck moves at the same speed if the
+        //monkey moves at the same speed if the
         //computer is fast or slow
-        truck.y += speed * dt;
+        monkey.y += speed * dt;
     } 
     if (down) {
-        truck.y -= speed * dt;
+        monkey.y -= speed * dt;
     }
     if (right) {
-        truck.x += speed * dt;
-        //You can flipH a spright so it is facing
+        monkey.x += speed * dt;
+        //You can flipH a sprite so it is facing
         //the other direction
-        truck.flipH = true;
+        monkey.flipH = true;
     }
     if (left) {
-        truck.x -= speed * dt;
-        truck.flipH = false;
+        monkey.x -= speed * dt;
+        monkey.flipH = false;
     }
 
-    //If the truck is close to the house
-    if ( distance(truck, house) < 10 ){
-        fire.image = ""; //Make the fire go away
+    //If the monkey is close to the banana
+    if ( distance(monkey, banana) < 20 ){
+        banana.x = Math.random()*750;
+        banana.y = Math.random()*200;
+        score++;
+    }
+    if ( distance(monkey, banana2) < 20 ){
+        banana2.x = Math.random()*700;
+        banana2.y = Math.random()*350;
+        score++;
+    }
+    if ( distance(monkey, lemon) < 25 ){
+        lemon.x = Math.random()*750;
+        lemon.y = Math.random()*400;
+        score--;
+    }
+    if ( distance(monkey, secondlemon) < 25 ){
+        secondlemon.x = Math.random()*750;
+        secondlemon.y = Math.random()*400;
+        score--;
     }
 
     //A very simple repeating animation
-    sprites[2].y += Math.sin(t)/10;
+    sprites[1].y += Math.sin(t)/10;
 
     return score;
 };
 
+
+
+
 export default {
-    name: "Homework",
-    instructions: "Write your instructions here",
-    icon: "📝", //Choose an emoji icon
+    name: "Monkey See, Monkey Do",
+    instructions: "Instructions: Using the arrow keys, move around the monkey to collect all of the bananas! But be careful because if lemons are collected, a point will be deducted!",
+    icon: "🐒", //Choose an emoji icon
     background: {
         //You can put CSS here to change your background
-        "background-color": "#555"
+        "background-color": "#9ACD32"
     },
     frame,
     setup,
